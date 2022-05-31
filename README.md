@@ -15,11 +15,11 @@
 
 ### Hackathon User Setup
 
-- Set up users in O365
+- Set up users in O365 [(PowerShell)](../../blob/main/o365users.ps1)
   - Revoke O365 licenses from environment's user accounts
   - Create hackathon users
   - Assign hackathon users O365 E5 licenses
-- Set up users in Power BI
+- Set up users in Power BI [(PowerShell)](../../blob/main/pbisetup.ps1)
   - Create a workspace for each hackathon user
   - Assign dedicated capacity to workspaces
   - Assign hackathon user as contributor to workspace (1:1)
