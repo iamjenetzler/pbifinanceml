@@ -2,6 +2,8 @@
 
 ## Hackathon Setup
 
+This repo includes the materials needed to set up and execute the Power BI Finance ML workshop. Use the PowerShell scripts to create the hacker user accounts, assign the licenses, create a workspace for each hacker, assign the workspaces to dedicated capacity, and add the hackers as contributors to their own workspace. The repo also includes the data file and the hackathon step-by-step guide for the hackers.
+
 ### Prerequisites
 
 - Create a [CDX Environment](https://cdx.transform.microsoft.com)
