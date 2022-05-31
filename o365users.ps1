@@ -1,13 +1,6 @@
 ﻿# Connect to Microsoft 365 with PowerShell
 # https://docs.microsoft.com/en-us/microsoft-365/enterprise/connect-to-microsoft-365-powershell?view=o365-worldwide#connect-with-the-azure-active-directory-powershell-for-graph-module
 
-<#
-Credentials:
-#admin@M365x25073779.onmicrosoft.com
-#q53b64K61B
-#>
-
-
 Install-Module AzureAD
 Import-Module  AzureAD
 Connect-AzureAD
