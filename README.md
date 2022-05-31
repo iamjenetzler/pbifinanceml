@@ -7,7 +7,7 @@ This repo includes the materials needed to set up and execute the Power BI Finan
 ### Prerequisites
 
 - Create a [CDX Environment](https://cdx.transform.microsoft.com)
-  - Create an Azure subscription
+- Set up an Azure subscription
   - Sign into Azure portal with tenant admin account
   - Use a voucher to create a new subscription
   - Create a [Power BI Embedded](https://docs.microsoft.com/en-us/power-bi/developer/embedded/embedded-capacity?tabs=gen2#sku-memory-and-computing-power") resource in the subscription
