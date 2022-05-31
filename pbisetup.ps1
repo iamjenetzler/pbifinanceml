@@ -1,12 +1,6 @@
 ﻿# Microsoft Power BI Cmdlets for Windows PowerShell and PowerShell Core
 # https://docs.microsoft.com/en-us/powershell/power-bi/overview?view=powerbi-ps
 
-<#
-Credentials:
-#admin@M365x25073779.onmicrosoft.com
-#q53b64K61B
-#>
-
 Install-Module -Name MicrosoftPowerBIMgmt
 Install-Module -Name MicrosoftPowerBIMgmt.Workspaces
 
