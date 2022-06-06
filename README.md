@@ -7,6 +7,9 @@ This repo includes the materials needed to set up and execute the Power BI Finan
 ### Prerequisites
 
 - Create a [CDX Environment](https://cdx.transform.microsoft.com)
+  - Go to "My Environments" tab
+  - Click on "Create Tenant"
+  - Select the following content pack: Microsoft 365 Enterprise with Users and No Content 
 - Set up an Azure subscription
   - Sign into Azure portal with tenant admin account
   - Use a voucher to create a new subscription
