@@ -15,7 +15,9 @@ This repo includes the materials needed to set up and execute the Power BI Finan
   - Use a voucher to create a new subscription
   - Create a [Power BI Embedded](https://docs.microsoft.com/en-us/power-bi/developer/embedded/embedded-capacity?tabs=gen2#sku-memory-and-computing-power") resource in the subscription
 - Set up Power BI dedicated capacity (Premium per User option)
-  - Premium per User: sign up for 60 day free trial in the Power BI web application  
+  - Log into [Power BI]([https://www.powerbi.com](https://app.powerbi.com/home) with Admin account
+  - Sign up for Power BI when prompted 
+  - Sign up for 60 day free trial Premium per User
 
 ### Hackathon User Setup
 
