@@ -30,10 +30,9 @@ $licensePackage = $licensePrefix + ":ENTERPRISEPREMIUM"
 
 # Remove Office 365 E5 licenses from environment's pre-made user accounts
 # https://docs.microsoft.com/en-us/microsoft-365/enterprise/remove-licenses-from-user-accounts-with-microsoft-365-powershell?view=o365-worldwide
-$userArray = Get-MsolUser -All  | where {$_.isLicensed -eq $true}   
+$userArray = Get-MsolUser -All  | where {$_.isLicensed -eq $true -and $_.UserPrincipalName -notlike "admin*" }   
 for ($i=0; $i -lt $userArray.Count; $i++)
 {
-
     $SKUs = @($userArray[$i].Licenses) 
     foreach ($SKU in $SKUs) 
     {             
@@ -44,7 +43,7 @@ for ($i=0; $i -lt $userArray.Count; $i++)
         }
     }
 }
-
+ 
 # Create Microsoft 365 user accounts for the hackers from csv (UserPrincipalName, FirstName, LastName, DisplayName, UsageLocation, AccountSkuID)
 # https://docs.microsoft.com/en-us/microsoft-365/enterprise/create-user-accounts-with-microsoft-365-powershell?view=o365-worldwide
 
@@ -59,7 +58,7 @@ if (Test-Path $UserFileName)
 for ($i=16; $i -lt 31; $i++) 
 {    
     New-MsolUser -DisplayName "hacker$($i)" -UserPrincipalName "hacker$($i)@$($tenantName).onmicrosoft.com" -UsageLocation "US" -LicenseAssignment $licensePackage -ForceChangePassword 0 |
-    Export-Csv -Path "C:\Users\jeetzler\Documents\NewAccounts.csv" -Append
+    Export-Csv -Path $UserFileName -Append
 } 
  
 # RESET Delete hacker user accounts
@@ -69,3 +68,4 @@ for ($i=0; $i -lt $userArray.Count; $i++)
 {
     Remove-MsolUser -UserPrincipalName $userArray[$i].UserPrincipalName -force 
 }
+
