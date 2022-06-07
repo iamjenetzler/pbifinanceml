@@ -29,3 +29,4 @@ This repo includes the materials needed to set up and execute the Power BI Finan
   - Create a workspace for each hackathon user
   - Assign dedicated capacity to workspaces
   - Assign hackathon user as contributor to workspace (1:1)
+- Set up OneDrive for each user [(PowerShell)](../../blob/main/setup/OneDriveSetup.ps1)
