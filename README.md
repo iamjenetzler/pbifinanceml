@@ -9,14 +9,13 @@ This repo includes the materials needed to set up and execute the Power BI Finan
 - Create a [CDX Environment](https://cdx.transform.microsoft.com)
   - Go to "My Environments" tab
   - Click on "Create Tenant"
-  - Select the following content pack: Microsoft 365 Enterprise
-- Set up an Azure subscription
+  - Select the following options: Microsoft 365 Enterprise Demo Content, Quick Tenant, 90 days
+- Set up an Azure subscription (Embedded Capacity option)
   - Sign into Azure portal with tenant admin account
   - Use a voucher to create a new subscription
   - Create a [Power BI Embedded](https://docs.microsoft.com/en-us/power-bi/developer/embedded/embedded-capacity?tabs=gen2#sku-memory-and-computing-power") resource in the subscription
-- Set up Power BI dedicated capacity
-  - Premium per User: sign up for free trial in the Power BI web application
-  - Embedded: use the Power BI embedded resource you created in the Azure subscription
+- Set up Power BI dedicated capacity (Premium per User option)
+  - Premium per User: sign up for 60 day free trial in the Power BI web application  
 
 ### Hackathon User Setup
 
