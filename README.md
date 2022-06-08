@@ -21,12 +21,12 @@ This repo includes the materials needed to set up and execute the Power BI Finan
 
 ### Hackathon User Setup
 
-- Set up users in O365 [(PowerShell)](../../blob/main/setup/o365users.ps1)
+- Set up users in O365 [(PowerShell script)](../../blob/main/setup/o365users.ps1)
   - Revoke O365 licenses from environment's user accounts
   - Create hackathon users
   - Assign hackathon users O365 E5 licenses
-- Set up users in Power BI [(PowerShell)](../../blob/main/setup/pbisetup.ps1)
+- Set up users in Power BI [(PowerShell script)](../../blob/main/setup/pbisetup.ps1)
   - Create a workspace for each hackathon user
   - Assign dedicated capacity to workspaces
   - Assign hackathon user as contributor to workspace (1:1)
-- Set up OneDrive for each user [(PowerShell)](../../blob/main/setup/OneDriveSetup.ps1)
+- Set up OneDrive for each user [(PowerShell script)](../../blob/main/setup/OneDriveSetup.ps1)
