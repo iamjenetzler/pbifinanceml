@@ -12,7 +12,7 @@ This repo includes the materials needed to set up and execute the Power BI Finan
   - Select the following options: Microsoft 365 Enterprise Demo Content, Quick Tenant, 90 days
 - Set up an Azure subscription (Embedded Capacity option)
   - Sign into Azure portal with tenant admin account
-  - Use a voucher to create a new subscription
+  - Use a voucher to create a new subscription. Process to redeem an Azure Pass voucher: https://www.microsoftazurepass.com/Home/HowTo
   - Create a [Power BI Embedded](https://docs.microsoft.com/en-us/power-bi/developer/embedded/embedded-capacity?tabs=gen2#sku-memory-and-computing-power") resource in the subscription
 - Set up Power BI dedicated capacity (Premium per User option)
   - Log into [Power BI]([https://www.powerbi.com](https://app.powerbi.com/home) with Admin account
