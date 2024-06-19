@@ -20,7 +20,7 @@ Connect-MgGraph -Scopes "User.ReadWrite.All", "Directory.ReadWrite.All", "Direct
 
 
 Connect-AzureAD
-
+Connect-MsolService
 Set-ExecutionPolicy RemoteSigned
 Connect-Graph -Scopes User.ReadWrite.All, Organization.Read.All
 
@@ -71,7 +71,7 @@ Get-MgSubscribedSku | Select-Object SkuId, SkuPartNumber
 
 
 # create hacker accounts with number suffix i 
-for ($i = 1; $i -lt 5; $i++) 
+for ($i = 5; $i -lt 7; $i++) 
 {
     try {
         # Create a new user
@@ -85,7 +85,7 @@ for ($i = 1; $i -lt 5; $i++)
             $userId = $newUser.Id            
 
             # Assign the license to the new user
-            Set-MgUserLicense -UserId $userId -AddLicenses  @{SkuId = $accountSkuId.SkuId} -RemoveLicenses @()         
+            # Set-MgUserLicense -UserId $userId -AddLicenses  @{SkuId = $accountSkuId.SkuId} -RemoveLicenses @()         
             
             # Export user information to CSV
             $newUser | Select-Object Id, DisplayName, UserPrincipalName | Export-Csv -Path $UserFileName -Append -NoTypeInformation
@@ -102,7 +102,7 @@ for ($i = 1; $i -lt 5; $i++)
 # RESET Delete hacker user accounts
 
 $userArray = Get-MgUser -All  | where {$_.UserPrincipalName -like "hacker*" }   
-for ($i=0; $i -lt $userArray.Count; $i++)
+for ($i=5; $i -lt $userArray.Count; $i++)
 {
     Write-Host "Removing user " $userArray[$i].Id
     Remove-MgUser -UserId $userArray[$i].Id  
