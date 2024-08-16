@@ -5,7 +5,7 @@ Install-Module AzureAD
 Import-Module  AzureAD
 Install-Module MSOnline
 Install-Module PowerShellGet -Force
-
+Install-Module -Name Az -AllowClobber -Scope CurrentUser
 
 # Open PowerShell as an Administrator
 
@@ -15,10 +15,12 @@ Uninstall-Module -Name Microsoft.Graph -AllVersions -Force
 # Install the latest Microsoft.Graph module
 Install-Module -Name Microsoft.Graph -AllowClobber -Force
 
+
 # Connect to Microsoft Graph
+Disconnect-MgGraph  
+Disconnect-AzureAD
+
 Connect-MgGraph -Scopes "User.ReadWrite.All", "Directory.ReadWrite.All", "Directory.AccessAsUser.All"
-
-
 Connect-AzureAD
 Connect-MsolService
 Set-ExecutionPolicy RemoteSigned
@@ -71,14 +73,14 @@ Get-MgSubscribedSku | Select-Object SkuId, SkuPartNumber
 
 
 # create hacker accounts with number suffix i 
-for ($i = 5; $i -lt 7; $i++) 
+for ($i = 1; $i -lt 16; $i++) 
 {
     try {
         # Create a new user
-        $newUser = New-MgUser -AccountEnabled:$true -DisplayName "hacker$($i)" `
-                              -UserPrincipalName "hacker$($i)@$($tenantName).onmicrosoft.com" `
-                              -MailNickname "hacker$($i)" `
-                              -PasswordProfile @{ForceChangePasswordNextSignIn = $false; Password = "TempP@ssword123"} `
+        $newUser = New-MgUser -AccountEnabled:$true -DisplayName "user$($i)" `
+                              -UserPrincipalName "user$($i)@$($tenantName).onmicrosoft.com" `
+                              -MailNickname "user$($i)" `
+                              -PasswordProfile @{ForceChangePasswordNextSignIn = $false; Password = "P@ssw0rd1!"} `
                               -UsageLocation "US"
         
         if ($null -ne $newUser) {
@@ -91,17 +93,17 @@ for ($i = 5; $i -lt 7; $i++)
             $newUser | Select-Object Id, DisplayName, UserPrincipalName | Export-Csv -Path $UserFileName -Append -NoTypeInformation
         }
         else {
-            Write-Host "Failed to create user hacker$($i)"
+            Write-Host "Failed to create user user$($i)"
         }
     }
     catch {
-        Write-Host "An error occurred while creating user hacker$($i): $_"
+        Write-Host "An error occurred while creating user user$($i): $_"
     }
 }
  
 # RESET Delete hacker user accounts
 
-$userArray = Get-MgUser -All  | where {$_.UserPrincipalName -like "hacker*" }   
+$userArray = Get-MgUser -All  | where {$_.UserPrincipalName -like "user*" }   
 for ($i=5; $i -lt $userArray.Count; $i++)
 {
     Write-Host "Removing user " $userArray[$i].Id

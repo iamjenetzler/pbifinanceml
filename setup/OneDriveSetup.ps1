@@ -4,7 +4,7 @@ Import-Module Microsoft.Online.SharePoint.PowerShell
 $Credential = Get-Credential
 
 Connect-MsolService -Credential $Credential
-Connect-SPOService -Url https://MngEnvMCAP996381-admin.sharepoint.com -Credential $Credential 
+Connect-SPOService -Url https://M365x38713764-admin.sharepoint.com -Credential $Credential 
 
 $list = @()
 #Counters
